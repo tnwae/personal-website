@@ -1,0 +1,73 @@
+html {
+    font-family: "Noto Sans", sans-serif;
+}
+
+body {
+    display: flex;
+    width: 66vw;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+[lang="zh"] {
+    font-family: "Noto Sans SC", sans-serif;
+}
+
+[lang="ja"] {
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+.proglang-list, .language-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.language-list li, .proglang-list li {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 0.5rem;
+}
+
+.lang-progress-bar, .proglang-progress-bar {
+    border: 1px solid black;
+    box-sizing: border-box;
+    grid-column: 2 / 4;
+}
+
+.explanation {
+    grid-column: 1 / 4;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s;
+}
+
+.lang-progress-bar div, .proglang-progress-bar div {
+    align-self: stretch;
+    z-index: -1;
+}
+
+.lang-progress-bar div {
+    background-color: blue;
+}
+
+.proglang-progress-bar div {
+    background-color: black;
+}
+
+.lang-progress-bar p, .proglang-progress-bar p {
+    padding: 0 0 0 0.25rem;
+    margin: 0;
+    font-style: italic;
+    grid-column: 1 / 2;
+    width: 100%;
+}
+
+.lang-progress-bar p {
+    color: skyblue;
+}
+
+.proglang-progress-bar p {
+    color: limegreen;
+}
