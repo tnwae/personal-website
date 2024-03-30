@@ -1,12 +1,65 @@
+:root {
+	--main-bg-color: #def;
+	--main-accent-color: #ec7600;
+	--scroll-pb-height: 0.5rem;
+	--header-height: 12rem;
+}
+
+:target {
+	scroll-margin-top: var(--header-height);
+}
+
 html {
     font-family: "Noto Sans", sans-serif;
 }
 
 body {
     display: flex;
-    width: 66vw;
-    margin: 0 auto;
     flex-direction: column;
+	padding: 0;
+	margin: 0;
+	background-color: var(--main-bg-color);
+}
+
+.site-header, .site-container, .site-footer {
+    padding: 0 17vw;
+}
+
+.site-header {
+	position: fixed;
+	top: var(--scroll-pb-height);
+	padding: 0 17vw;
+	height: var(--header-height);
+	background-color: #cde;
+}
+
+.site-nav menu {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	display: grid;
+	width: 100%;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+/*
+	This is why William hates frontend development.
+	
+	To align text in the navigation buttons on this site, I have had to repeat myself not once, not twice, but THREE TIMES.
+ */
+.site-nav menu li {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+.site-container {
+	margin-top: var(--header-height);
+}
+
+.site-footer {
+	margin-bottom: 6rem;
 }
 
 [lang="zh"] {
@@ -70,4 +123,44 @@ body {
 
 .proglang-progress-bar p {
     color: limegreen;
+}
+
+/* Style the header: fixed position (always stay at the top) */
+.pb-header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #f1f1f1;
+}
+
+/* The progress container (grey background) */
+.progress-container {
+  width: 100%;
+  height: var(--scroll-pb-height);
+  background: #ccc;
+}
+
+/* The progress bar (scroll indicator) */
+.progress-bar {
+  height: var(--scroll-pb-height);
+  background-color: var(--main-accent-color);
+  width: 0%;
+}
+
+.site-nav menu li a {
+	color: black;
+	text-decoration: none;
+}
+
+.site-nav menu li a:hover {
+	border-bottom: 1px dotted black;
+}
+
+.active {
+	background-color: #abc;
+}
+
+.active a {
+	color: black;
 }
